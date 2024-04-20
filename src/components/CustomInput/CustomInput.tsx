@@ -1,4 +1,5 @@
 import { ChangeEventHandler } from "react";
+import "./CustomInput.css";
 
 interface CustomInputProps {
   type: string;
@@ -12,8 +13,9 @@ interface CustomInputProps {
 export function CustomInput(props: CustomInputProps) {
   return (
     <>
-      <p>{props.label}</p>
+      <p className="label">{props.label}</p>
       <input
+        className="input"
         value={props.value}
         type="text"
         maxLength={props.digitsQuantityAllowed}

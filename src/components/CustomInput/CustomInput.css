@@ -1,0 +1,10 @@
+.input {
+  padding: 10px;
+  border-radius: 10%;
+  outline: none;
+}
+
+.label {
+  font-size: 22px;
+  font-weight: 600;
+}

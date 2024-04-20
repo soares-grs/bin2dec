@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import "./App.css";
-import { CustomInput } from "./components/CustomInput";
+import { CustomInput } from "./components/CustomInput/CustomInput";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 
 function App() {
@@ -10,6 +10,10 @@ function App() {
     const regex = /^([01]+)?$/;
 
     return regex.test(value);
+  };
+
+  const convertBinToDec = (bin: string): number => {
+    return parseInt(bin, 2);
   };
 
   const notifyErro = (message: string) => {
@@ -39,15 +43,21 @@ function App() {
 
   return (
     <>
-      <CustomInput
-        digitsQuantityAllowed={8}
-        label="Bin"
-        value={bin}
-        placeholder="números binários..."
-        type="text"
-        onChange={handleBin}
-      />
-      <p>Output: {bin}</p>
+      <h1>Binary to Decimal</h1>
+      <div className="form-container">
+        <CustomInput
+          digitsQuantityAllowed={8}
+          label="Binary"
+          value={bin}
+          placeholder="Insert a binary number..."
+          type="text"
+          onChange={handleBin}
+        />
+        <p className="decimal-container">
+          <p>Decimal:</p>
+          {bin.length > 0 && <p>{convertBinToDec(bin)}</p>}
+        </p>
+      </div>
       <ToastContainer />
     </>
   );
