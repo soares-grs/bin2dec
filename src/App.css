@@ -54,5 +54,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+}
+
+.btn-convert {
+  padding: 8px;
+  border-radius: 8px;
+  outline: none;
+  background-color: #28a745;
+  width: 150px;
+  margin-top: 8px;
 }

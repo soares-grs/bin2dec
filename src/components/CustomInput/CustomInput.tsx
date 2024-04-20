@@ -3,7 +3,7 @@ import "./CustomInput.css";
 
 interface CustomInputProps {
   type: string;
-  placeholder: string;
+  placeholder?: string;
   label: string;
   value: string;
   digitsQuantityAllowed: number;
@@ -13,15 +13,17 @@ interface CustomInputProps {
 export function CustomInput(props: CustomInputProps) {
   return (
     <>
-      <p className="label">{props.label}</p>
-      <input
-        className="input"
-        value={props.value}
-        type="text"
-        maxLength={props.digitsQuantityAllowed}
-        placeholder={props.placeholder}
-        onChange={props.onChange}
-      />
+      <div className="input-field-container">
+        <p className="label">{props.label}</p>
+        <input
+          className="input"
+          value={props.value}
+          type="text"
+          maxLength={props.digitsQuantityAllowed}
+          placeholder={props.placeholder}
+          onChange={props.onChange}
+        />
+      </div>
     </>
   );
 }
